@@ -75,4 +75,4 @@ class Manager extends Employee {
 Complete the `Manager` class by filling in the `constructor` and `getDetails` methods. Explain why you need to use `super` in each method and what would happen if you didn't use it.
 
 ## Response 3
-We invoke super.getDetails() to reuse the parent class’s implementation of the method within the child’s overridden version. This allows the child class to call the parent’s method and then add or modify behavior on top of it.
+We invoke `super.getDetails()` to reuse the *parent* class’s implementation of the method within the *child’s* overridden version. This allows the *child* class to call the *parent’s* method and then add or modify behavior on top of it.
