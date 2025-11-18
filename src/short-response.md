@@ -16,7 +16,7 @@ In your own words, define what **inheritance** is in object-oriented programming
 ## Response 1
 
 ---
-
+**Inheritance** helps developers avoid repeating code, saving development *time* and *memory* by reusing shared functionality. It also makes the code cleaner and easier to read because, by following the prototype chain of a class, you can always locate the **methods** and **variables** that are passed down from **parent** classes.
 ## Prompt 2
 
 Consider these classes:
@@ -42,7 +42,7 @@ Explain what happens when `rex.eat()` is invoked. In your answer, describe the r
 ## Response 3
 
 --- 
-
+What is going to happen is the system will go into the *Dog* class since it did not find the `eat()` method in the *Puppy* class. Then, since the *Dog* class does not contain the `eat()` method and is a child of *Animal*, it will look there, run that method, and return the string 'eating'.
 ## Prompt 3
 
 Look at these classes:
@@ -61,10 +61,13 @@ class Employee {
 class Manager extends Employee {
   constructor(name, salary, department) {
     // YOUR CODE HERE
+    super(name,salary);
+    this.department = department;
   }
   getDetails() {
     // YOUR CODE HERE - should include both the Employee details 
     // AND the department info
+    return `${super.getDetails()} in the ${this.department} department`;
   }
 }
 ```
@@ -72,3 +75,4 @@ class Manager extends Employee {
 Complete the `Manager` class by filling in the `constructor` and `getDetails` methods. Explain why you need to use `super` in each method and what would happen if you didn't use it.
 
 ## Response 3
+We invoke `super.getDetails()` to reuse the *parent* class’s implementation of the method within the *child’s* overridden version. This allows the *child* class to call the *parent’s* method and then add or modify behavior on top of it.
